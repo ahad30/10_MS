@@ -16,8 +16,8 @@ const InstructorsSection: React.FC<InstructorsSectionProps> = ({ sections }) => 
     <section className="mb-12">
       <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">{instructorsSection.name}</h2>
       <div className="">
-        {instructorsSection.values.map((instructor) => (
-            <div key={instructor.slug} className="flex items-center border space-x-4 px-4 py-3  rounded-lg">
+        {instructorsSection.values.map((instructor, index) => (
+            <div key={index} className="flex items-center border space-x-4 px-4 py-3  rounded-lg">
    <div>
      {instructor.image && (
       <img src={instructor.image} alt={instructor.name} className="w-16 h-16 rounded-full object-cover" />

@@ -16,13 +16,13 @@ const Accordion: React.FC<AccordionItemProps> = ({
   onToggle,
 }) => {
   return (
-<section className="px-3">
+<section className="px-2">
         <div className="border-b border-gray-200">
       <button
-        className="flex items-center justify-between w-full p-4 text-left focus:outline-none hover:bg-gray-50 transition-colors"
+        className="flex items-center justify-between w-full p-4  focus:outline-none hover:bg-gray-50 transition-colors hover:text-gray-900 "
         onClick={onToggle}
       >
-        <span className="text-lg font-medium text-gray-800">
+        <span className="!text-lg font-bold text-gray-800 text-left lg:w-[100%]">
           {parse(title)}
         </span>
         <ChevronDown
@@ -38,7 +38,7 @@ const Accordion: React.FC<AccordionItemProps> = ({
         }`}
       >
         <div className="p-4 pl-6">
-          <div className="max-w-none text-[#000000] text-lg space-y-3">
+          <div className="max-w-none text-[#2C3240]  text-lg space-y-3">
             {parse(content)}
           </div>
         </div>

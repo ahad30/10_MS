@@ -1,15 +1,16 @@
 "use client";
 
 import YouTube from "react-youtube";
-import { Checklist, Medium } from "@/types/product";
+import { Checklist, Data, Medium } from "@/types/product";
 import { useState } from "react";
 
 interface TrailerPlayerProps {
   media: Medium[];
   checklist: Checklist[];
+  productData: Data
 }
 
-const TrailerPlayer: React.FC<TrailerPlayerProps> = ({ media, checklist }) => {
+const TrailerPlayer: React.FC<TrailerPlayerProps> = ({ media, checklist , productData}) => {
   const [activeVideoIndex, setActiveVideoIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -149,7 +150,7 @@ const TrailerPlayer: React.FC<TrailerPlayerProps> = ({ media, checklist }) => {
 
         {/* Thumbnail Slider */}
         <div className="mt-4">
-          <div className="flex space-x-3 overflow-x-auto pb-2 py-2 px-2">
+          <div className="flex space-x-3 overflow-x-auto pb-2 py-2 px-2 hide-scrollbar">
             {allPreviewMedia.map((mediaItem, index) => (
               <button
                 key={`${mediaItem.resource_type}-${index}`}
@@ -196,7 +197,7 @@ const TrailerPlayer: React.FC<TrailerPlayerProps> = ({ media, checklist }) => {
             </div>
          
           <button className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200">
-            কোর্সটি কিনুন
+           {productData?.cta_text?.name}
           </button>
         </div>
 

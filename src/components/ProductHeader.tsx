@@ -6,7 +6,7 @@ interface ProductHeaderProps {
 }
 
 const ProductHeader: React.FC<ProductHeaderProps> = ({ title, description }) => (
-  <section className="lg:py-24 px-10 mb-12"
+  <section className="lg:py-24 px-10 mb-3"
    style={{
            backgroundImage: `url("/ui_(1)_1716445506383.jpeg")`,
             backgroundSize: "cover",
