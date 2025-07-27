@@ -59,7 +59,7 @@ export default function Home() {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className='flex flex-col min-h-screen justify-center items-center'>Loading...</div>;
   }
 
   if (!productData) {
@@ -87,26 +87,35 @@ export default function Home() {
         <meta property="og:image" content={seo.og_image} />
       </Head>
 
-      <div className="container mx-auto px-4 py-12">
-        <div className="flex justify-end mb-4">
+      <div className="py-4">
+        <div className="flex justify-end mb-4 px-3">
           <button
             onClick={toggleLanguage}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-white border border-gray-200 text-black font-bold py-1  px-2 rounded"
           >
-            {lang === 'en' ? 'বাংলা' : 'English'}
+            {lang === 'en' ? 'বাং' : 'EN'} 
           </button>
         </div>
         
         <ProductHeader title={productData.title} description={productData.description} />
-        <TrailerPlayer media={productData.media} />
+       
+        
+        <div className='flex gap-10 px-5 max-w-[1250px] mx-auto'>
+        <div className='w-[65%]'>
         <InstructorsSection sections={productData.sections} />
         <CourseFeatures sections={productData.sections} />
         <LearningOutcomes sections={productData.sections} />
         <FeatureExplanations sections={productData.sections} />
-        <CourseHighlights checklist={productData.checklist} />
         <AboutCourse sections={productData.sections} />
-        <Testimonials sections={productData.sections} />
-        <FAQ sections={productData.sections} />
+        {/* <Testimonials sections={productData.sections} /> */}
+        {/* <FAQ sections={productData.sections} /> */}
+
+            </div>
+            <div className='w-[35%] -mt-[320px]'>
+             <TrailerPlayer media={productData.media} checklist = {productData.checklist}/>
+            </div>
+        </div>
+
       </div>
     </>
   );
