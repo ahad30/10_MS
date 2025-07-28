@@ -11,6 +11,7 @@ interface ReusableSliderProps {
   arrows?: boolean;
   autoplay?: boolean;
   speed?: number;
+   swipeToSlide: boolean,
   responsive?: Array<{
     breakpoint: number;
     settings: {
@@ -27,12 +28,13 @@ export const ReusableSlider = ({
   children,
   slidesToShow = 3,
   slidesToScroll = 1,
-  infinite = true,
+  infinite = false,
   dots = false,
   autoplay = false,
   speed = 500,
   responsive = [],
   className = "",
+  swipeToSlide = true,
 }: ReusableSliderProps) => {
   const settings = {
     dots,
@@ -42,10 +44,12 @@ export const ReusableSlider = ({
     slidesToScroll,
     autoplay,
     responsive,
+    swipeToSlide
+    
   };
 
   return (
-    <div className={` ${className}`}>
+    <div className={`${className} px-5`}>
       <Slider {...settings}>{children}</Slider>
     </div>
   );

@@ -1,6 +1,6 @@
 import { Section } from '@/types/product';
 import { useState } from "react";
-import Accordion from './common/Accordion';
+import Accordion from './common/Accordion/Accordion';
 
 
 interface AboutCourseProps {

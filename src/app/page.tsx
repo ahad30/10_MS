@@ -29,18 +29,18 @@ async function fetchProductData(lang: string): Promise<Data> {
 export default function Home() {
   const [lang, setLang] = useState<"en" | "bn">("en");
   const [productData, setProductData] = useState<Data | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const loadData = async () => {
       try {
-        setLoading(true);
+        setIsLoading(true);
         const data = await fetchProductData(lang);
         setProductData(data);
       } catch (error) {
         console.error("Error loading product data:", error);
       } finally {
-        setLoading(false);
+        setIsLoading(false);
       }
     };
     loadData();
@@ -50,7 +50,7 @@ export default function Home() {
     setLang((prevLang) => (prevLang === "en" ? "bn" : "en"));
   };
 
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="flex flex-col min-h-screen justify-center items-center">
         Loading...
@@ -107,7 +107,7 @@ export default function Home() {
           description={productData.description}
         />
 
-        <div className="flex gap-14 px-5 max-w-[1250px] mx-auto">
+        <div className="flex gap-14 px-5 max-w-[1280px] mx-auto">
           <div className="w-[65%]">
             <TabItems  sections={productData.sections} />
           </div>

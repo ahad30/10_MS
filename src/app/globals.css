@@ -58,3 +58,9 @@
 }
 
 
+
+.testimonial-slider .slick-slide {
+  padding: 0 8px; /* Adjust this value */
+}
+
+
