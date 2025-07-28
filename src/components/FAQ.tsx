@@ -1,4 +1,4 @@
-import parse from 'html-react-parser';
+
 import { Section } from '@/types/product';
 import Accordion from './common/Accordion/Accordion';
 import { useState } from 'react';
