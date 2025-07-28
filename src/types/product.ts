@@ -101,15 +101,12 @@ export interface Data {
   cta_text: CtaText;
   sections: Section[];
   is_cohort_based_course: boolean;
-  secondary_cta_group: any[];
   delivery_method: string;
 }
 
 export interface ApiResponse {
   code: number;
   data: Data;
-  error: any[];
   message: string;
-  payload: any[];
   status_code: number;
 }
