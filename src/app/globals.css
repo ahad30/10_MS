@@ -13,14 +13,31 @@
   font-family: "Inter", sans-serif;
 }
 
-/* Scrollbar */
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+
+/* Scrollber */
+
+  /* width */
+  .scrollbar-0::-webkit-scrollbar {
+    width: 1px;
+    height: 5px;
+  }
+
+  /* Track */
+  .scrollbar-0::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  .scrollbar-0::-webkit-scrollbar-thumb {
+    background: #a7abe8;
+  }
+
+  /* Handle on hover */
+  .scrollbar-0::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
 
 
 

@@ -188,7 +188,7 @@ const TrailerPlayer: React.FC<TrailerPlayerProps> = ({
 
           {/* Thumbnail Slider */}
           <div className="mt-4 mb-10">
-            <div className="flex space-x-3 overflow-x-auto pb-2 py-2 px-2 hide-scrollbar">
+            <div className="flex space-x-3 overflow-x-auto pb-2 py-2 px-2 scrollbar-0">
               {allPreviewMedia.map((mediaItem, index) => (
                 <button
                   key={`${mediaItem.resource_type}-${index}`}
