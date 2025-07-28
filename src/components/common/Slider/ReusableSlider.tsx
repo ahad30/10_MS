@@ -49,7 +49,7 @@ export const ReusableSlider = ({
   };
 
   return (
-    <div className={`${className} px-5`}>
+    <div className={`${className}`}>
       <Slider {...settings}>{children}</Slider>
     </div>
   );

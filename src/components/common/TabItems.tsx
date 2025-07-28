@@ -115,7 +115,7 @@ export const TabItems = ({ sections }: TabSliderProps) => {
               },
             },
           ]}
-          className="tab-slider"
+          className="tab-slider px-5"
         >
           {tabItems.map(({ type, name }) => (
             <div key={type} className="px-1"> {/* Added wrapper div with padding */}

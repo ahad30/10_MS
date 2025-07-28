@@ -17,7 +17,6 @@ const TrailerPlayer: React.FC<TrailerPlayerProps> = ({
 }) => {
   const [activeVideoIndex, setActiveVideoIndex] = useState(0);
   const [showStickySection, setShowStickySection] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const mainSectionRef = useRef<HTMLDivElement>(null);
@@ -55,31 +54,23 @@ const TrailerPlayer: React.FC<TrailerPlayerProps> = ({
   };
 
   const handleThumbnailClick = (index: number, mediaItem: Medium) => {
-    setLoading(true);
     const mediaIndex = allPreviewMedia.findIndex(
       (m) => m.resource_value === mediaItem.resource_value
     );
     if (mediaIndex !== -1) {
       setActiveVideoIndex(mediaIndex);
-      setTimeout(() => setLoading(false), 500);
     }
   };
 
   const handlePrevVideo = () => {
-    setLoading(true);
-
     if (activeVideoIndex > 0) {
       setActiveVideoIndex(activeVideoIndex - 1);
-      setTimeout(() => setLoading(false), 500);
     }
   };
 
   const handleNextVideo = () => {
-    setLoading(true);
-
     if (activeVideoIndex < allPreviewMedia.length - 1) {
       setActiveVideoIndex(activeVideoIndex + 1);
-      setTimeout(() => setLoading(false), 500);
     }
   };
 
@@ -94,11 +85,7 @@ const TrailerPlayer: React.FC<TrailerPlayerProps> = ({
           {/* Video Player and Image Section */}
 
           <div className="relative">
-            {loading ? (
-              <div className="w-full h-[230px] flex items-center justify-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-900"></div>
-              </div>
-            ) : currentMedia.resource_type === "video" ? (
+            {currentMedia.resource_type === "video" ? (
               <div className=" relative">
                 {!isPlaying ? (
                   // Custom thumbnail with play button overlay
