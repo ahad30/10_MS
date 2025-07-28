@@ -1,5 +1,4 @@
 "use client";
-
 import YouTube from "react-youtube";
 import { Checklist, Data, Medium } from "@/types/product";
 import { useEffect, useRef, useState } from "react";
@@ -47,11 +46,6 @@ const TrailerPlayer: React.FC<TrailerPlayerProps> = ({
   if (!allPreviewMedia.length) return null;
 
   const currentMedia = allPreviewMedia[activeVideoIndex];
-
-  const youtubeOpts = {
-    height: "230px",
-    width: "100%",
-  };
 
   const handleThumbnailClick = (index: number, mediaItem: Medium) => {
     const mediaIndex = allPreviewMedia.findIndex(

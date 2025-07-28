@@ -7,13 +7,6 @@ interface FAQProps {
   sections: Section[];
 }
 
-const FAQItem: React.FC<{ faq: Section['values'][0] }> = ({ faq }) => (
-  <div className="p-4 bg-gray-50 rounded-lg mb-2">
-    <h3 className="font-semibold">{faq.question}</h3>
-    {faq.answer && <div className="prose max-w-none">{parse(faq.answer)}</div>}
-  </div>
-);
-
 const FAQ: React.FC<FAQProps> = ({ sections }) => {
   const faqSection = sections.find((s) => s.type === 'faq');
     const [openItems, setOpenItems] = useState<Record<number, boolean>>({});

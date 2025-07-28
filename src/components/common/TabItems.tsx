@@ -1,7 +1,6 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import Slider from 'react-slick';
 import { Section } from '@/types/product';
 import InstructorsSection from '@/components/InstructorsSection';
 import CourseFeatures from '@/components/CourseFeatures';

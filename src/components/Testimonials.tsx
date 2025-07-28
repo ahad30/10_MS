@@ -1,5 +1,4 @@
 'use client';
-import parse from 'html-react-parser';
 import YouTube from 'react-youtube';
 import { useState } from 'react';
 import { Section, SectionValue } from '@/types/product';
@@ -92,9 +91,6 @@ const TestimonialCard: React.FC<{ testimonial: Section['values'][0] }> = ({ test
             <p className="text-gray-600 text-sm">{testimonial.description}</p>
           </div>
         </div>
-        {/* {testimonial.testimonial && (
-          <div className="prose max-w-none">{parse(testimonial.testimonial)}</div>
-        )} */}
       </div>
     </>
   );
