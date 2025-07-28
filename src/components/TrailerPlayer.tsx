@@ -126,7 +126,7 @@ const TrailerPlayer: React.FC<TrailerPlayerProps> = ({
                 )}
               </div>
             ) : (
-              <div className="relative w-full h-[230px] flex items-center justify-center">
+              <div className="relative w-full h-[185px] flex items-center justify-center">
                 <img
                   src={currentMedia.resource_value}
                   alt="Preview Image"
